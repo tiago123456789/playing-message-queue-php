@@ -38,6 +38,7 @@ class Publisher
 
     public function publish()
     {
+        \AMQPExchange::
         $this->channel->basic_publish($this->message, $this->exchange, $this->queue);
         $this->channel->close();
         $this->connection->close();
